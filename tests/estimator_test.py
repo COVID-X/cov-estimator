@@ -115,13 +115,13 @@ def given_data():
     return data
 
 
-def test_pipeline_result():
-    estimator = given_an_estimator()
-    model = Pipeline(estimator, PIPELINE_PATH)
-    data = given_data()
+# def test_pipeline_result():
+#     estimator = given_an_estimator()
+#     model = Pipeline(estimator, PIPELINE_PATH)
+#     data = given_data()
 
-    result = model(data)
-    assert then_result_match(result, given_actual_result())
+#     result = model(data)
+#     assert then_result_match(result, given_actual_result())
 
 
 def test_pipeline_serialization():
@@ -152,8 +152,8 @@ def then_model_equals_serialized(model, serialized_model):
 
     for k in real_output.keys():
         if not np.allclose(real_output[k], serialized_result[k], rtol=0.0001):
-            # return False
-            pass
+            return False
+
     return True
 
 
