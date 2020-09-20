@@ -1,0 +1,25 @@
+[flake8]
+extend-ignore = D108,D412,E123,E126,E203,E221,E251,E272,F403,F405,W503, E225
+# F403 unable to detect filenames for 'from ... import *'
+# F405 missing importation. See F403
+# D208 Docstring is over-indented
+# D412 no blank lines allowed between a section header and his content
+# E123 closing bracket does not much indentation of opening bracket's line
+# E126 continuation line over-indentend for hanging indent
+# E203 whitespace before ':'
+# E221 multiple spaces before operatior
+# E251 unspected spaces arround keyword / parameter equals
+# E255 missing whitespace arround operator
+# E272 multiple spaces before keyword
+# W503 line break before the binary operatior
+
+max-line-lenght = 72
+
+exclude = 
+		.git,
+		__pycache__,
+		docs/,
+		__init__.py,
+		manage.py,
+		*/migrations,
+		migrations/*,
