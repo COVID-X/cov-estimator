@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 
 test_module_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, test_module_path + "/../")
@@ -99,9 +100,9 @@ def given_an_estimator():
 
 def given_actual_result():
     data = {
-        "pneumonia": np.array([[0.9999976]]),
-        "covid": np.array([[0.18703818]]),
-        "normal": np.array([[2.3841858e-06]]),
+        "pneumonia": np.array([0.9999976]),
+        "covid": np.array([0.18703818]),
+        "normal": np.array([2.3841858e-06]),
     }
     return data
 
@@ -130,6 +131,11 @@ def test_pipeline_serialization():
     Pipeline.save(model)
     seralized_model = Pipeline.load(PIPELINE_PATH)
     assert then_model_equals_serialized(model, seralized_model)
+    # remove test serialization
+    try:
+        shutil.rmtree(PIPELINE_PATH)
+    except Exception as e:
+        pass
 
 
 def then_result_match(output, expected):
