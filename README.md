@@ -1,4 +1,5 @@
 # cov-estimator
+[![codecov](https://codecov.io/gh/COVID-X/cov-estimator/branch/master/graph/badge.svg)](https://codecov.io/gh/COVID-X/cov-estimator)
 ### Simple estimator module for serialization
 
 This is a simple library to build adapters to construct complex 
